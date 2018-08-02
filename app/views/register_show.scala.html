@@ -1,0 +1,44 @@
+@(register:Register)
+<html>
+    <head>
+    <title>Register Show</title>
+    <link rel="stylesheet" href="/assets/stysheets/bootstrap/css/bootstrap.css">
+    </head>
+    <body>
+        <center><h2>ข้อมูลลูกค้า</h2></center>
+        <div class="container" style="background-color: palevioletred">
+            <div class="row">
+                <div class="col-md-2" style="background-color: palevioletred"></div>
+                <div class="col-md-8" style="background-color: #b9def0">
+                    <table class="table table-success">
+                        <tr>
+                            <th>ชื่อ-สกุล</th>
+                            <td>@register.getSurname</td>
+                        </tr>
+                        <tr>
+                            <th>วันเกิด</th>
+                            <td>@register.getBirthday</td>
+                        </tr>
+                        <tr>
+                            <th>เพศ</th>
+                            <td>@register.getGender</td>
+                        </tr>
+                        <tr>
+                            <th>เบอร์โทรศัพท์</th>
+                            <td>@register.getPhone</td>
+                        </tr>
+                        <tr>
+                            <th>อีเมล</th>
+                            <td>@register.getEmail</td>
+                        </tr>
+                        <tr>
+                            <th>ที่อยู่</th>
+                            <td>@register.getAddress</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-2" style="background-color: palevioletred"></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+@(content:Html)
+<html>
+<head>
+    <title>BY BEAUTY</title>
+    <link type="text/css" rel="stylesheet"
+    href="/assets/stylesheets/bootstrap/css/bootstrap.css">
+    <link href="../../public/stylesheets/bootstrap/css/bootstrap.css">
+</head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12" style="background-color: hotpink; color: white">
+                     @header()
+                </div>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    @menu_page() <br>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-12">
+                    @content
+            </div>
+        </div>
+
+
+    </body>
+</html>

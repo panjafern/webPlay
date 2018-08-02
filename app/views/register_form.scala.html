@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Register Form</title>
+        <link rel="stylesheet" href="/assets/stysheets/bootstrap/css/bootstrap.css">
+    </head>
+    <body style="background-color:lightpink;color:midnightblue">
+        <h2 align="center" style=" color:#2b669a">ลงทะเบียนลูกค้า</h2>
+        <form action="/register_post" method="post">
+            <table align="center">
+                <tr>
+                    <th>ชื่อ-สกุล</th>
+                    <td><input type="text" name="surname" size="30" maxlength="30" required></td>
+                </tr>
+                <tr>
+                    <th>วันเกิด</th>
+                    <td><input type="text" name="birthday" size="30" maxlength="20" required></td>
+                </tr>
+                <tr>
+                    <th>เพศ</th>
+                    <td><input type="radio" name="gender" value="ชาย">ชาย
+                        <input type="radio" name="gender" value="หญิง">หญิง
+                    </td>
+                </tr>
+                <tr>
+                    <th>เบอร์โทรศัพท์</th>
+                    <td><input type="text" name="phone" size="30" maxlength="10" required></td>
+                </tr>
+                <tr>
+                    <th>อีเมล</th>
+                    <td><input type="text" name="email" size="30" maxlength="30" required></td>
+                </tr>
+                <tr>
+                    <th>ที่อยู่</th>
+                    <td><textarea name="address" cols="40" rows="5"></textarea></td><br>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <br><input type="submit" value="บันทึก" class="btn btn-success">
+                        <input type="reset" value="เคลียร์" class="btn btn-danger">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

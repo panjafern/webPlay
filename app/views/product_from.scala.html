@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/assets/stysheets/bootstrap/css/bootstrap.css">
+    </head>
+    <body style="background-color: lightskyblue;color:#122b40">
+        <h2 align="center" style=" color:darkslategray">ข้อมูลสินค้า</h2>
+        <form action="/product_post" method="post">
+        <table align="center">
+            <tr>
+                <th>รหัสสินค้า</th>
+                <td><input type="text" name="id" size="20" maxlength="10" required></td>
+            </tr>
+            <tr>
+                <th>ประเภท</th>
+                <td><input type="radio" name="type" value="lipstick">Lipstick
+                <input type="radio" name="type" value="eyeshadow">Eyeshadow
+                <input type="radio" name="type" value="blushon">Blush on
+                <input type="radio" name="type" value="concealer">Concealer</td>
+            </tr>
+            <tr>
+                <th>ชื่อสินค้า</th>
+                <td><input type="text" name="name" size="30" maxlength="30" required></td>
+            </tr>
+            <tr>
+                <th>รายละเอียด</th>
+                <td><input type="text" name="detail" size="30" maxlength="30" required></td>
+            </tr>
+            <tr>
+                <th>ราคา</th>
+                <td><input type="number" name="price" size="20" maxlength="10" required></td>
+            </tr>
+            <tr>
+                <th>จำนวน</th>
+                <td><input type="number" name="amount" size="20" maxlength="10" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <br><input type="submit" value="บันทึก" class="btn btn-success">
+                    <input type="reset" value="เคลียร์" class="btn btn-danger">
+                </td>
+            </tr>
+        </table>
+        </form>
+    </body>
+</html>
