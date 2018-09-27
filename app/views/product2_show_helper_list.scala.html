@@ -1,0 +1,38 @@
+@(product2List:List[Product2])
+<html>
+    <head>
+        <link rel="stylesheet" href="/assets/stysheets/bootstrap/css/bootstrap.css">
+    </head>
+    <body style="background-color:lightcoral">
+
+        <div class="container" style="background-color:lightcoral">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading"><center><h2 style="color:coral">ข้อมูลสินค้า</h2></center> </div>
+                        <center><h1 style="color:darkgray"></h1></center>
+                    <table class="table table-success">
+                        <tr>
+                            <th>รหัสสินค้า</th>
+                            <th>วันที่ผลิต</th>
+                            <th>ประเภท</th>
+                            <th>ชื่อสินค้า</th>
+                            <th>รายละเอียด</th>
+
+                        </tr>
+                        @for(pd <- product2List){
+                            <tr>
+                                <td><a href="/showOne/@pd.getId()">@pd.getId()</a> </td>
+                                <td>@pd.getMfg</td>
+                                <td>@pd.getType</td>
+                                <td>@pd.getName</td>
+                                <td>@pd.getDetail</td>
+                            </tr>
+                        }
+                        <td>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

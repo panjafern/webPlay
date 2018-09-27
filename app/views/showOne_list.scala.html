@@ -1,0 +1,42 @@
+@(pd:Product2)
+<body style="background-color:lightcoral">
+    <div class="container" style="background-color:lightcoral">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><center><h2 style="color:coral">ข้อมูลสินค้า</h2></center> </div>
+
+                    <center><h1 style="color:darkgray"></h1></center>
+                    <table class="table table-info">
+                        <tr>
+                            <th>รหัสสินค้า</th>
+                            <th>วันที่ผลิต</th>
+                            <th>ประเภท</th>
+                            <th>ชื่อสินค้า</th>
+                            <th>รายละเอียด</th>
+                            <th>ราคา</th>
+                            <th>จำนวน</th>
+                            <th>ส่วนลด(%)</th>
+                            <th>ราคาสุทธิ</th>
+                            <th> </th>
+                        </tr>
+                        <tr>
+                            <td>@pd.getId </td>
+                            <td>@pd.getMfg</td>
+                            <td>@pd.getType</td>
+                            <td>@pd.getName</td>
+                            <td>@pd.getDetail</td>
+                            <td>@pd.getPrice</td>
+                            <td>@pd.getAmount</td>
+                            <td>@pd.getDiscountRate</td>
+                            <td>@pd.getNetPrice()</td>
+                            <td>
+                                <img src="/assets/images/product2/@pd.getPicture" class="img-thumbnail" width="100px" height="100px"></td>
+                        </tr>
+                    </table>
+                </div>
+                <button class="button"><span><a href="/product2_form_helper_list"> Add Product</a> </span></button>
+            </div>
+        </div>
+    </div>
+</body>

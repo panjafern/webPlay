@@ -1,0 +1,30 @@
+@(myForm1:Form[Product])
+
+@import helper._;
+
+    <html>
+        <head>
+            <link rel="stylesheet" href="/assets/stysheets/bootstrap/css/bootstrap.css">
+        </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"> </div>
+                <div class="col-md-8">
+                    @helper.form(action = routes.Application.product_post_helper_list(), 'class->"from-control"){
+                    @inputDate(myForm1("mfg"), '_label ->"วันที่ผลิต", 'size->"20", 'maxlength->"10", 'required->"required")
+                    @inputRadioGroup(myForm1("type") , options=Seq("lipstick"->"Lipstick","eyeshadow"->"Eyeshadow",
+                        "blushon"->"Blush on","concealer"->"concealer"), '_label->"ประเภท")
+                    @inputText(myForm1("name"), '_label ->"ชื่อสินค้า", 'size->"30", 'maxlength->"20", 'required->"required")
+                        @textarea(myForm1("detail"), '_label->"รายละเอียด" , 'cols->"50", 'rows->"3")
+                    @inputText(myForm1("price"), '_label ->"ราคา", 'size->"20", 'maxlength->"10", 'required->"required")
+                        @inputText(myForm1("amount"), '_label ->"จำนวน", 'size->"20", 'maxlength->"10", 'required->"required")
+                        <input type="submit" value="บันทึก" class="btn btn-success">
+                        <input type="reset" value="เคลียร์" class="btn btn-danger">
+                }
+                </div>
+                <div class="col-md-2"> </div>
+        </div>
+        </div>
+    </body>
+    </html>

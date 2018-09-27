@@ -1,47 +1,37 @@
-@(product:Product)
+@(productList:List[Product])
 <html>
     <head>
         <link rel="stylesheet" href="/assets/stysheets/bootstrap/css/bootstrap.css">
     </head>
     <body style="background-color: palevioletred">
-       <h2 align="center"></h2>
+       <h2 align="center">ข้อมูลสินค้า</h2>
         <div class="container" style="background-color: palevioletred">
             <div class="row">
                 <div class="col-md-2" style="background-color: palevioletred"></div>
-                <div class="col-md-8">
-                    <div class="panel panel-warning">
-                        <div class="panel-heading"><center><h2 style="color:coral">ข้อมูลสินค้า</h2></center> </div>
-                        <center><h1 style="color:darkgray"></h1></center>
+                <div class="col-md-8" style="background-color: #b9def0">
                     <table class="table table-success">
                         <tr>
                             <th>วันที่ผลิต</th>
-                            <td>@product.getMfg</td>
-                        </tr>
-                        <tr>
                             <th>ประเภท</th>
-                            <td>@product.getType</td>
-                        </tr>
-                        <tr>
                             <th>ชื่อสินค้า</th>
-                            <td>@product.getName</td>
-                        </tr>
-                        <tr>
                             <th>รายละเอียด</th>
-                            <td>@product.getDetail</td>
-                        </tr>
-                        <tr>
                             <th>ราคา</th>
-                            <td>@product.getPrice บาท</td>
-                        </tr>
-                        <tr>
                             <th>จำนวน</th>
-                            <td>@product.getAmount ชิ้น</td>
                         </tr>
+                        @for(pd <- productList){
+                            <tr>
+                                <td>@pd.getMfg()</td>
+                                <td>@pd.getType</td>
+                                <td>@pd.getName</td>
+                                <td>@pd.getDetail</td>
+                                <td>@pd.getPrice</td>
+                                <td>@pd.getAmount</td>
+                            </tr>
+                        }
                     </table>
                 </div>
                 <div class="col-md-2" style="background-color: palevioletred"></div>
             </div>
-        </div>
         </div>
     </body>
 </html>

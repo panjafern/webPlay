@@ -1,0 +1,54 @@
+@(product3List:List[Product3])
+<body style="background-color:lightcoral">
+    <div class="container" style="background-color:lightcoral">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><center><h2 style="color:coral">ข้อมูลสินค้า</h2></center> </div>
+
+                    <center><h1 style="color:darkgray"></h1></center>
+                    <table class="table table-info">
+                        <tr>
+                            <th>รหัสสินค้า</th>
+                            <th>ประเภท</th>
+                            <th>ชื่อสินค้า</th>
+                            <th>รายละเอียด</th>
+                            <th>น้ำหนัก(กรัม)</th>
+                            <th>วันที่ผลิต</th>
+                            <th>วันหมดอายุ</th>
+                            <th>ราคา</th>
+                            <th>ส่วนลด(%)</th>
+                            <th>จำนวน</th>
+                            <th> <a href="/inputProduct3" class="btn btn-success" style="width: 80px">
+                                <span class="glyphicon glyphicon-plus-sign"></span>
+                            </a> </th>
+                        </tr>
+                        @for(product <- product3List){
+                        <tr>
+                            <td>@product.getId </td>
+                            <td>@product.getType</td>
+                            <td>@product.getName</td>
+                            <td>@product.getDetail</td>
+                            <td>@product.getWeight</td>
+                            <td>@product.getMfg</td>
+                            <td>@product.getExp</td>
+                            <td>@product.getPrice</td>
+                            <td>@product.getDiscountRate</td>
+                            <td>@product.getAmount</td>
+                            <td>
+                                <a href="/editProduct3/@product.getId" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                                <a href="/deleteProduct3/@product.getId" class="btn btn-danger"
+                                onclick="return confirm('ต้องการลบข้อมูลใช่หรือไม่?')">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                            </td>
+                        </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

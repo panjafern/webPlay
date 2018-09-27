@@ -1,0 +1,32 @@
+@(myForm1:Form[Product2])
+
+@import helper._;
+<body style="background-color:lightskyblue">
+        <h2 align="center"></h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"> </div>
+                <div class="col-md-8">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading"><center><h2 style="color:coral">ข้อมูลสินค้า</h2></center> </div>
+                        <center><h1 style="color:darkgray"></h1></center>
+                        @helper.form(action = routes.Application.product2_post_helper_list(), 'class->"from-control" ,'enctype->"multipart/form-data"){
+                    @inputDate(myForm1("mfg"), '_label ->"วันที่ผลิต",'required->"required")
+                    @inputRadioGroup(myForm1("type") , options=Seq("lipstick"->"Lipstick","eyeshadow"->"Eyeshadow",
+                        "blushon"->"Blush on","concealer"->"concealer"), '_label->"ประเภท")
+                    @inputText(myForm1("name"), '_label ->"ชื่อสินค้า", 'size->"20", 'maxlength->"20", 'required->"required")
+                        @textarea(myForm1("detail"), '_label->"รายละเอียด" , 'cols->"40", 'rows->"3")
+                    @inputText(myForm1("price"), '_label ->"ราคา", 'size->"20", 'maxlength->"10", 'required->"required")
+                        @inputText(myForm1("amount"), '_label ->"จำนวน", 'size->"20", 'maxlength->"10", 'required->"required")
+                        @inputText(myForm1("weight"), '_label ->"น้ำหนักสินค้า(กรัม)", 'size->"20", 'maxlength->"10", 'required->"required")
+                        @inputText(myForm1("discountRate"), '_label ->"ส่วนลด(%)", 'size->"20", 'maxlength->"10", 'required->"required")
+                        @inputFile(myForm1("picture"), '_label ->"รูปสินค้า")
+                        <input type="submit" value="บันทึก" class="btn btn-success">
+                        <input type="reset" value="เคลียร์" class="btn btn-danger">
+                }
+
+                </div></div>
+                <div class="col-md-2"> </div>
+        </div>
+        </div>
+</body>

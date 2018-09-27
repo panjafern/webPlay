@@ -1,0 +1,39 @@
+@(myForm:Form[Product3])
+
+@import helper._;
+<body style="background-color:lightskyblue">
+    <h2 align="center"></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"> </div>
+            <div class="col-md-8">
+                <div class="panel panel-warning">
+                    <div class="panel-heading"><center><h2 style="color:coral">ข้อมูลสินค้า</h2></center> </div>
+                    <center><h1 style="color:darkgray"></h1></center>
+
+                    @if(flash.containsKey("msgError")){
+                        <div class="alert alert-danger">
+                            <strong>ผิดพลาด!</strong> @flash.get("msgError")
+                        </div>
+                    }
+                    @helper.form(action = routes.Application.saveProduct3(), 'class->"from-control"){
+                        @inputText(myForm("id"), '_label ->"รหัสสินค้า",'required->"required")
+                        @inputRadioGroup(myForm("type") , options=Seq("lipstick"->"Lipstick","eyeshadow"->"Eyeshadow",
+                            "blushon"->"Blush on","concealer"->"concealer"), '_label->"ประเภท")
+                        @inputText(myForm("name"), '_label ->"ชื่อสินค้า", 'size->"20", 'maxlength->"20", 'required->"required")
+                        @textarea(myForm("detail"), '_label->"รายละเอียด" , 'cols->"40", 'rows->"3")
+                        @inputText(myForm("weight"), '_label ->"น้ำหนักสินค้า(กรัม)", 'size->"20", 'maxlength->"10", 'required->"required")
+                        @inputDate(myForm("mfg"), '_label ->"วันที่ผลิต",'required->"required")
+                        @inputDate(myForm("exp"), '_label ->"วันหมดอายุ",'required->"required")
+                        @inputText(myForm("price"), '_label ->"ราคา", 'size->"20", 'maxlength->"10", 'required->"required")
+                        @inputText(myForm("discountRate"), '_label ->"ส่วนลด(%)", 'size->"20", 'maxlength->"10", 'required->"required")
+                        @inputText(myForm("amount"), '_label ->"จำนวน", 'size->"20", 'maxlength->"10", 'required->"required")
+                        <input type="submit" value="บันทึก" class="btn btn-success">
+                        <input type="reset" value="เคลียร์" class="btn btn-danger">
+                        }
+
+                </div></div>
+            <div class="col-md-2"> </div>
+        </div>
+    </div>
+</body>

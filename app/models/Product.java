@@ -1,18 +1,20 @@
 package models;
 
+import java.util.Random;
+
 /**
  * Created by Computer on 12/7/2561.
  */
 public class Product {
-    private String id,type,name,detail;
+    private String mfg, type, name, detail;
     private double price;
     private int amount;
 
     public Product() {
     }
 
-    public Product(String id, String type, String name, String detail, double price, int amount) {
-        this.id = id;
+    public Product(String mfg, String type, String name, String detail, double price, int amount) {
+        this.mfg = mfg;
         this.type = type;
         this.name = name;
         this.detail = detail;
@@ -20,12 +22,12 @@ public class Product {
         this.amount = amount;
     }
 
-    public String getId() {
-        return id;
+    public String getMfg() {
+        return mfg;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setMfg(String mfg) {
+        this.mfg = mfg;
     }
 
     public String getType() {
@@ -68,4 +70,3 @@ public class Product {
         this.amount = amount;
     }
 }
-

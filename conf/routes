@@ -16,5 +16,30 @@ GET     /product_form               controllers.Application.product_form()
 POST    /product_post               controllers.Application.product_post()
 GET     /register_form              controllers.Application.register_form()
 POST    /register_post              controllers.Application.register_post()
+
+GET     /product_form_helper        controllers.Application.product_form_helper()
+POST    /product_post_helper        controllers.Application.product_post_helper()
+
+GET     /product_form_helper_list   controllers.Application.product_form_helper_list()
+POST    /product_post_helper_list   controllers.Application.product_post_helper_list()
+
+GET     /product2_form_helper_list  controllers.Application.product2_form_helper_list()
+POST    /product2_post_helper_list  controllers.Application.product2_post_helper_list()
+
+GET     /showOne/:id                controllers.Application.showOne(id:String)
+
+GET     /testdb                     controllers.Application.testAddProduct3()
+
+GET     /inputProduct3              controllers.Application.inputProduct3()
+POST    /saveProduct3               controllers.Application.saveProduct3()
+
+#GET     /createProduct3             controllers.Application.createProduct3()
+GET     /editProduct3/:id           controllers.Application.editProduct3(id:String)
+POST    /updateProduct3             controllers.Application.updateProduct3()
+
+GET     /deleteProduct3/:id         controllers.Application.deleteProduct3(id:String)
+
+GET     /listProduct3               controllers.Application.listProduct3()
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

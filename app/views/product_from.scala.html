@@ -2,13 +2,18 @@
     <head>
         <link rel="stylesheet" href="/assets/stysheets/bootstrap/css/bootstrap.css">
     </head>
-    <body style="background-color: lightskyblue;color:#122b40">
-        <h2 align="center" style=" color:darkslategray">ข้อมูลสินค้า</h2>
+    <body style="background-color:lightgray">
+        <h2 align="center" style=" color:darkslategray"></h2>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+        <div class="panel panel-warning">
+            <div class="panel-heading"><center><h2 style="color:coral">ข้อมูลสินค้า</h2></center> </div>
+            <center><h1 style="color:darkgray"></h1></center>
         <form action="/product_post" method="post">
         <table align="center">
             <tr>
                 <th>รหัสสินค้า</th>
-                <td><input type="text" name="id" size="20" maxlength="10" required></td>
+                <td><input type="date" name="mfg" size="20" maxlength="10" required></td>
             </tr>
             <tr>
                 <th>ประเภท</th>
@@ -27,11 +32,11 @@
             </tr>
             <tr>
                 <th>ราคา</th>
-                <td><input type="number" name="price" size="20" maxlength="10" required></td>
+                <td><input type="number" name="price" size="30" maxlength="10" required></td>
             </tr>
             <tr>
                 <th>จำนวน</th>
-                <td><input type="number" name="amount" size="20" maxlength="10" required></td>
+                <td><input type="number" name="amount" size="30" maxlength="10" required></td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
@@ -40,6 +45,8 @@
                 </td>
             </tr>
         </table>
-        </form>
+        </form></div>
+        </div>
+            <div class="col-md-3"></div>
     </body>
 </html>
